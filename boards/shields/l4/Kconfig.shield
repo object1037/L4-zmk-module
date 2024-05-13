@@ -1,4 +1,5 @@
 config SHIELD_L4_LEFT
-    def_bool $(shields_list_contains,l4_left)
+	def_bool $(shields_list_contains,l4_left)
+
 config SHIELD_L4_RIGHT
-    def_bool $(shields_list_contains,l4_right)
+	def_bool $(shields_list_contains,l4_right)
