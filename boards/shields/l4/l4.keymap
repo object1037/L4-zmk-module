@@ -4,6 +4,15 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
+  combos {
+    compatible = "zmk,combos";
+    combo_studio {
+      timeout-ms = <50>;
+      key-positions = <0 5 36 41>; // ESC + 5 + LSHIFT + B
+      bindings = <&studio_unlock>;
+    };
+  };
+
   behaviors {
     my_lt: my_layer_tap {
       compatible = "zmk,behavior-hold-tap";
@@ -41,11 +50,11 @@
 
     second_layer {
       bindings = <
-&kp C_MUTE     &kp F11        &kp F12 &trans       &trans     &trans       &trans    &trans   &trans   &trans   &trans   &trans
-&kp C_VOL_UP   &kp EXCL       &kp AT  &kp HASH     &kp DLLR   &kp PRCNT    &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR &kp UNDER
-&kp C_VOL_DN   &trans         &trans  &bt BT_PRV   &bt BT_NXT &trans       &trans    &trans   &trans   &trans   &trans   &trans
-&kp LS(LG(N5)) &studio_unlock &trans  &out OUT_USB &trans     &out OUT_BLE &trans    &trans   &trans   &trans   &trans   &trans
-                              &trans       &trans                            &trans   &trans
+&kp C_MUTE     &kp F11  &kp F12 &trans       &trans     &trans       &trans    &trans   &trans   &trans   &trans   &trans
+&kp C_VOL_UP   &kp EXCL &kp AT  &kp HASH     &kp DLLR   &kp PRCNT    &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR &kp UNDER
+&kp C_VOL_DN   &trans   &trans  &bt BT_PRV   &bt BT_NXT &trans       &trans    &trans   &trans   &trans   &trans   &trans
+&kp LS(LG(N5)) &trans   &trans  &out OUT_USB &trans     &out OUT_BLE &trans    &trans   &trans   &trans   &trans   &trans
+                                &trans       &trans                            &trans   &trans
       >;
     };
   };

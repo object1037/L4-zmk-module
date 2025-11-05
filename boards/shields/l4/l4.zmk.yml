@@ -6,6 +6,7 @@ url: https://github.com/object1037/L4
 requires: [seeeduino_xiao_ble]
 features:
   - keys
+  - studio
 siblings:
   - l4_left
   - l4_right
