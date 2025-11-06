@@ -8,12 +8,23 @@
 };
 
 / {
+  behaviors {
+    boot_unlock: boot_unlock {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "hold-preferred";
+      tapping-term-ms = <3000>;
+      bindings = <&bootloader>, <&studio_unlock>;
+      display-name = "Boot-unlock";
+    };
+  };
+
   combos {
     compatible = "zmk,combos";
     combo_studio {
       timeout-ms = <50>;
       key-positions = <0 5 36 41>; // ESC + 5 + LSHIFT + B
-      bindings = <&studio_unlock>;
+      bindings = <&boot_unlock 0 0>;
     };
   };
 
@@ -48,6 +59,13 @@
 &trans       &kp LS(LG(N5)) &trans  &out OUT_USB &trans     &out OUT_BLE &trans    &trans   &trans   &trans   &trans   &trans
                                     &trans       &trans                  &trans    &trans
       >;
+    };
+
+    extra1 {
+      status = "reserved";
+    };
+    extra2 {
+      status = "reserved";
     };
   };
 };
